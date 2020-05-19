@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ page_title }}</title>
+        <meta charset="utf-8"/>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+        <meta name="description" content="{{ page_description | escape }}"/>
+        <link rel="canonical" href="{{ canonical_url }}"/>
+        <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+        {{
+      content_for_header
+    }}
+        <!-- Header hook for plugins -->
+        {{
+      "application.scss.css" | asset_url | stylesheet_tag
+    }}
+        {{
+      "application.js" | asset_url | script_tag
+    }}
+    </head>
+    <body>
+        {% assign names = "apples, oranges, peaches, apple, pinaples, cocounut,
+    mango" | split: ", " %}
+        <ul>
+            {% for x in names reversed %}
+                <li>{{ x }}</li>
+            {% else %}
+                <li>Sorry no names available</li>
+            {% endfor %}
+        </ul>
+
+        <ul>
+            {% assign last = 6%}
+            {% for i in (0..last) %}
+                {% if i == 3%}
+                    {% continue
+      %}
+                {% else %}
+                    <li>
+                        {{ names[i] }}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <!--
+        {%  assign names = "apples, oranges, peaches, apple, pinaples, cocounut" | split: ", " %}
+        
+        
+        {% for x in names limit:2 %}
+        <li> {{x}}</li>
+        {% else %}
+        <li>
+            Sorry no names available</li>
+        {% endfor %}
+        </ul>
+        
+        
+        
+        
+        {%  assign names = "apples, oranges, peaches" | split: ", " %}
+        <ul>
+            {% for x in names %}
+            <li>
+                {{x}}
+            </li>
+            {% endfor %}
+        </ul>
+        
+        
+        
+        -->
+        
+            <!--
+        {% assign value = "GREATNESS" %}
+        {% case value %}
+        {% when "Jonnny" %}
+        <h1>HEY JONNNY</h1>
+        {% when "Pogii" %}
+        <h1>HEY pogii</h1>
+        {% when "Ferrrari" %}
+        <h1>HEY ferrrari</h1>
+        {% when "Lambo" %}
+        <h1>HEY LAMBOO YOU ME MILLION</h1>
+        {% else %}
+        <h1>I DONT KNOW YOUW</h1>
+        {% endcase %}
+        
+                -->
+        
+            <!--
+        
+        {% assign line = "You are "%}
+        
+        {% assign name = ["jon, jeff, joe, 323, 4, 234, 34, 324" | split:  ',  '] %}
+        <h1>{{line}}
+            {{name[2] | money }}
+        </h1>
+        
+        
+        {% assign = 2 | plus :2% }
+        
+        -->
+        
+            <!--
+        {% assign value = 2%}
+        {% unless == 2 %}
+        <h1>Show 2 products</h1>
+        
+        {% else %}
+        <h1>Not showing products</h1>>
+        
+        {% endunless %}
+        
+        -->
+        
+            <!--
+
+        {% for link in linklists.main-menu.links %};
+            {% assign child_list_handle = link.title | handleize %};
+            {% if linklists[child_list_handle].links != blank %};
+                <a href="{{ link.url }}">{{ link.title }}</a>;
+                [;
+                {% for childlink in linklists[child_list_handle].links %};
+                    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>;
+                {% endfor %}];
+            {% else %};
+                <a href="{{ link.url }}">{{ link.title }}</a>;
+            {% endif %};
+        {% endfor %};
+
+        <a href="/cart">cart</a>;
+                    Jon IS GREAT</h1>;
+        {% if shop.customer_accounts_enabled %};
+            {% if customer %};
+                <a href="/account">account</a>;
+                {{ 'log out'  | customer_logout_link }};
+            {% else %};
+                {{ 'log in ' | customer_login_link }};
+                <h1>;
+
+                {{ 'register' | customer_register_link }};
+            {% endif %};
+        {% endif %};
+
+        <main role="main">;
+            {{ content_for_layout }};
+        </main>;
+
+
+--></body>
+</html>
