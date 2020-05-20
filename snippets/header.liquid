@@ -1,27 +1,5 @@
-<header>
-
-
-    <a href="/cart">cart</a>
-    <a href="/pages/about">about</a>
-
-
-    {% if shop.customer_accounts_enabled %}
-        {% if customer %}
-            <a href="/account">account</a>
-            {{ 'log out'  | customer_logout_link }}
-        {% else %}
-            {{ 'log in ' | customer_login_link }}
-      
-
-            {% endif %}
-        {% endif %}
-
-
-    </header>
-
-
-    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <h5 class="my-0 mr-md-auto font-weight-normal"><a href="{{ routes.root_url }}"> {{ shop.name }}</a></h5>
         <nav class="my-2 my-md-0 mr-md-3">
             {% for link in linklists.main-menu.links %}
                 {% assign child_list_handle = link.title | handleize %}
