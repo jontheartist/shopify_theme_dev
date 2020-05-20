@@ -3,8 +3,8 @@
 
 
 
-const testVar = () => {
-    console.log('hello everyone');
-}
+// const testVar = () => {
+//     console.log('hello everyone');
+// }
 
-testVar()
+// testVar()
