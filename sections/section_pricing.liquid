@@ -1,10 +1,8 @@
 <div class="container">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">{{section.settings.title}}</h1>
-        <p class="lead">
-            https: //shopify.dev/tutorials/develop-theme-use-sections#class
-            <br>
-            https://shopify.dev/docs/themes/sections/content-schema
+        <p class="lead">{{section.settings.Description}}
+
         </p>
     </div>
 
@@ -76,6 +74,79 @@
             "type": "text",
             "label": "Title",
             "default": "Pricing"
+        }, {
+            "id": "Description",
+            "type": "textarea",
+            "label": "Section Description",
+            "default": "https://shopify.dev/docs/themes/sections/content-schema https: //shopify.dev/tutorials/develop-theme-use-sections#class"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "tier",
+            "name": "Tier",
+            "limit": 4,
+            "settings": [
+                {
+                    "id": "tier_name",
+                    "type": "text",
+                    "label": "Tier Name",
+                    "default": "Free"
+                }, {
+                    "id": "tier_price",
+                    "type": "text",
+                    "label": "Tier Price",
+                    "default": "0"
+                }, {
+                    "id": "tier-date",
+                    "type": "select",
+                    "label": "Tier Date",
+                    "options": [
+                        {
+                            "value": "dy",
+                            "label": "Daily"
+                        }, {
+                            "value": "mo",
+                            "label": "Monthly"
+                        }, {
+                            "value": "yr",
+                            "label": "Yearly"
+                        }
+                    ],
+                    "default": "mo"
+                }, {
+                    "id": "tier_description",
+                    "type": "textarea",
+                    "label": "Tier Description",
+                    "info": "Seperate by a coma",
+                    "default": "10 users included, 2GB of storage, Email support, Help center access",
+                    "placeholder": "example a, example b, example c"
+                }, {
+                    "id": "tier_button_style",
+                    "type": "select",
+                    "label": "button style",
+                    "options": [
+                        {
+                            "value": "outline",
+                            "label": "Outline"
+                        }, {
+                            "value": "filled",
+                            "label": "filled"
+                        }
+                    ],
+                    "default": "outline"
+                }, {
+                    "id": "tier_button_text",
+                    "type": "text",
+                    "label": "Button Text",
+                    "default": "Sign Up"
+                }, {
+                    "id": "tier_button_link",
+                    "type": "text",
+                    "label": "Tier Link URL",
+                    "default": "#"
+                }
+            ]
         }
     ]
 }
