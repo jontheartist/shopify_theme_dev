@@ -24,12 +24,12 @@
                         {% endfor %}
                     </ul>
                     <a href="{{block.settings.tier_button_link}}" class="btn btn-lg
-                                                            btn-block
-                                                            {% if block.settings.tier_button_style == " outline" %}
-                                                            btn-outline-primary
-                                                            {% else %}
-                                                            btn-primary
-                                                            {% endif %}">{{block.settings.tier_button_text}}</a>
+                                                                                                                                                                                                                                                                                                                                                                                    btn-block
+                                                                                                                                                                                                                                                                                                                                                                                    {% if block.settings.tier_button_style == " outline" %}
+                                                                                                                                                                                                                                                                                                                                                                                    btn-outline-primary
+                                                                                                                                                                                                                                                                                                                                                                                    {% else %}
+                                                                                                                                                                                                                                                                                                                                                                                    btn-primary
+                                                                                                                                                                                                                                                                                                                                                                                    {% endif %}">{{block.settings.tier_button_text}}</a>
                 </div>
             </div>
         {% endfor %}
@@ -121,6 +121,34 @@
                     "type": "text",
                     "label": "Tier Link URL",
                     "default": "#"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "Custom Component",
+            "name": "Pricing!!!!!",
+            "settings": {
+                "title": "Pricing",
+                "Description": "JON THE HREAT JON THE GREAT JONTHE GREAT"
+            },
+            "blocks": [
+                {
+                    "type": "tier",
+                    "settings": {
+                        "tier_name": "Free"
+                    }
+                }, {
+                    "type": "tier",
+                    "settings": {
+                        "tier_name": "Monthly"
+                    }
+                }, {
+                    "type": "tier",
+                    "settings": {
+                        "tier_name": "Yearly"
+                    }
                 }
             ]
         }
