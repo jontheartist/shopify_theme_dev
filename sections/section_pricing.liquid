@@ -1,7 +1,11 @@
 <div class="container">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Jon the greatest</h1>
-        <p class="lead">Benz hubebe</p>
+        <h1 class="display-4">{{section.settings.title}}</h1>
+        <p class="lead">
+            https: //shopify.dev/tutorials/develop-theme-use-sections#class
+            <br>
+            https://shopify.dev/docs/themes/sections/content-schema
+        </p>
     </div>
 
     <div class="card-deck mb-3 text-center">
@@ -58,3 +62,22 @@
         </div>
     </div>
 </div>
+
+
+{% schema %}
+
+{
+    "name": "Pricing",
+    "class": "section-pricing",
+    "tag": "section",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "Pricing"
+        }
+    ]
+}
+
+{% endschema %}
