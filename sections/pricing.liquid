@@ -24,12 +24,12 @@
                         {% endfor %}
                     </ul>
                     <a href="{{block.settings.tier_button_link}}" class="btn btn-lg
-                                                                                                                                                                                                                                                                                                                                                                                    btn-block
-                                                                                                                                                                                                                                                                                                                                                                                    {% if block.settings.tier_button_style == " outline" %}
-                                                                                                                                                                                                                                                                                                                                                                                    btn-outline-primary
-                                                                                                                                                                                                                                                                                                                                                                                    {% else %}
-                                                                                                                                                                                                                                                                                                                                                                                    btn-primary
-                                                                                                                                                                                                                                                                                                                                                                                    {% endif %}">{{block.settings.tier_button_text}}</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    btn-block
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {% if block.settings.tier_button_style == " outline" %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    btn-outline-primary
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {% else %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    btn-primary
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {% endif %}">{{block.settings.tier_button_text}}</a>
                 </div>
             </div>
         {% endfor %}
@@ -74,7 +74,7 @@
                     "label": "Tier Price",
                     "default": "0"
                 }, {
-                    "id": "tier-date",
+                    "id": "tier_date",
                     "type": "select",
                     "label": "Tier Date",
                     "options": [
@@ -128,7 +128,7 @@
     "presets": [
         {
             "category": "Custom Component",
-            "name": "Pricing!!!!!",
+            "name": "Pricing",
             "settings": {
                 "title": "Pricing",
                 "Description": "JON THE HREAT JON THE GREAT JONTHE GREAT"
@@ -137,17 +137,26 @@
                 {
                     "type": "tier",
                     "settings": {
-                        "tier_name": "Free"
+                        "tier_name": "Free",
+                        "tier_price": "0",
+                        "tier_date": "mo",
+                        "tier_button_style": "outline"
                     }
                 }, {
                     "type": "tier",
                     "settings": {
-                        "tier_name": "Monthly"
+                        "tier_name": "Monthly",
+                        "tier_price": "25",
+                        "tier_date": "mo",
+                        "tier_button_style": "filled"
                     }
                 }, {
                     "type": "tier",
                     "settings": {
-                        "tier_name": "Yearly"
+                        "tier_name": "Yearly",
+                        "tier_price": "16",
+                        "tier_date": "yr",
+                        "tier_button_style": "filled"
                     }
                 }
             ]
